@@ -10,7 +10,10 @@ We first performed PCA to visualize our dataset and to make our models more robu
 
 For hyper-parameters, we performed a grid search to try a set of hyper-parameter combinations, then chose the one with best performance. For a given hyper-parameter combination, we might use cross validation to tune model parameters when needed. For model evaluation, we constructed confusion matrices and compared statistics such as accuracy, specificity and sensitivity, which could give us an overall insight of model performance. 
 
-### Results
+### Results and Discussion
 The overall result is presented in the following Table:
+![alt text](https://github.com/fengling0410/Breast-Tissue-Classification/blob/main/result.png)
 
+In this project, we have fitted Logistic Regression with regularization, Generalized Additive Model, Support Vector Machine, Decision Tree, Random Forest, Gradient Boosting Classifier, Adaboost and XGBoost. Among these models, Logistic Regression, GAM, SVM and Adaboost have the highest test accuracy and test AUC. The Logistic Regression model is comparatively simple and easy to understand, but with regularization it loses interpretability. GAM is easy to interpret, but it has high computation complexity. SVM has poor interpretability. Adaboost has high flexibility via ensemble learning and provides variable importance. 
 
+Since in medical fields, doctors and researchers want decisions more than predictions, here we recommend using the Adaboost model to help explain and predict breast tumor category based on 30 tutor features. The model has the highest test accuracy and very high test AUC, and also provides insights about feature importance: texture_worst, concave points_worst and area_worst are the top three most important features. We hope that our project could provide insights for future tumor classification tasks and ease future research in this field.
